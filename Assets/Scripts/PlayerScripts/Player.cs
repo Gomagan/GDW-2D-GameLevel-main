@@ -7,11 +7,12 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
+    private EnemyRetreat[] er;
     //Getting the move speed and direction for the players
     [Header("Movement")]
     private Vector2 _moveDir;
     [SerializeField] private float _moveSpeed;
-    bool _hitWall;
+    readonly bool _hitWall;
 
     private float tempSpeed;
 
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-    //Activating the InputManager and Controls
+        //Activating the InputManager and Controls
         InputManager.Init(this , this);
         InputManager.EnableInGame();
 
@@ -50,37 +51,41 @@ public class Player : MonoBehaviour
         {
             timeCount = invincibilityTime;
             Destroy(other.gameObject);
+            for (int i = 0; i < er.Length; i++)
+            {
+                er[i].enabled = true;
+            }
+
         }
 
         if (other.gameObject.tag == "Enemy")
         {
             if (invincible)
             {
-                Destroy(other.gameObject);
+                return;
             }
             else
             {
+                for (int i = 0; i < er.Length; i++)
+                {
+                    er[i].enabled = false;
+                }
                 Destroy(this.gameObject);
             }
         }
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
+
+        er = FindObjectsOfType<EnemyRetreat>();
         //updating the position of the players
 
-          if (_hitWall != true)
+        if (_hitWall != true)
           {
-              transform.position += (Vector3)(_moveSpeed * Time.deltaTime * _moveDir);
+              transform.position += (Vector3)(_moveSpeed * Time.fixedDeltaTime * _moveDir);
           }
-
-          /*
-              if (_hitWall == true)
-          {
-              transform.position += (Vector3)(_moveDir * 0);
-          }
-           */
 
 
         pointText.text = characterName + ": " + points;
