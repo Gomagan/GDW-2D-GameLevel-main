@@ -13,8 +13,10 @@ public class WebSpawner : MonoBehaviour
 
 
 
+
     void Start()
-    {   //spawns webs
+    {
+        //spawns webs
         for (int i = webLocations.Length -1 ; i > 0; i--) 
         {
             Instantiate(web, webLocations[i], Quaternion.identity);
