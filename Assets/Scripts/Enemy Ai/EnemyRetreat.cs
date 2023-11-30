@@ -43,7 +43,6 @@ public class EnemyRetreat : EnemyBehavior
         postion.z = this.enemy.transform.position.z;
         this.enemy.transform.position = postion;    
         this.enemy.atBase.Enable(this.duration);
-        this.enemy.retreat.Disable();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,6 +53,7 @@ public class EnemyRetreat : EnemyBehavior
             {
                 Wounded();
             }
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

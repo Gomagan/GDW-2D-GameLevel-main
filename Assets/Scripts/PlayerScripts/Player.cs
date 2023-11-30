@@ -99,6 +99,11 @@ public class Player : MonoBehaviour
         else
         {
             invincible = false;
+            for (int i = 0; i < er.Length; i++)
+            {
+                er[i].enabled = false;
+            }
+
         }
 
     }
