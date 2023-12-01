@@ -5,6 +5,7 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
     public LayerMask Wall;
+    public LayerMask Enemies;
     public List<Vector2> availableDir {  get; private set; }
     private void Start()
     {
@@ -19,8 +20,8 @@ public class Node : MonoBehaviour
     private void CheckAvaiableDir(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.BoxCast(this.transform.position, Vector2.one * 0.55f, 0.0f, dir, 1.5f, this.Wall);
-       
-        if (hit.collider == null)
+        RaycastHit2D hitE = Physics2D.BoxCast(this.transform.position, Vector2.one * 0.55f, 0.0f, dir, 1.5f, this.Enemies);
+        if (hit.collider == null && hitE.collider == null)
         {
             this.availableDir.Add(dir);
         }

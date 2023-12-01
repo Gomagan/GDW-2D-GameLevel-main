@@ -93,3 +93,6 @@ MonoBehaviour:
   Wall:
     serializedVersion: 2
     m_Bits: 8
+  Enemies:
+    serializedVersion: 2
+    m_Bits: 256
