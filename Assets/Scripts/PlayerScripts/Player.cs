@@ -8,12 +8,13 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class Player : MonoBehaviour
 {
     private EnemyRetreat[] er;
+    private int swap;
     //Getting the move speed and direction for the players
     [Header("Movement")]
     private Vector2 _moveDir;
     [SerializeField] private float _moveSpeed;
     readonly bool _hitWall;
-
+    [SerializeField] private WinConditions wl;
     private float tempSpeed;
 
 
@@ -32,27 +33,29 @@ public class Player : MonoBehaviour
     void Start()
     {
         //Activating the InputManager and Controls
-        InputManager.Init(this , this);
+        InputManager.Init(this, this);
         InputManager.EnableInGame();
-
+        swap = 0;
     }
 
 
 
-    void OnCollisionEnter2D(Collision2D other)
+   private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Web") 
+        if (other.gameObject.tag == "Web")
         {
             points += 100;
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.tag == "Consumable")
+        if (other.gameObject.tag == "Consumable")
         {
             timeCount = invincibilityTime;
             Destroy(other.gameObject);
+            print(true);
             for (int i = 0; i < er.Length; i++)
             {
+                print(false);
                 er[i].enabled = true;
             }
 
@@ -62,14 +65,11 @@ public class Player : MonoBehaviour
         {
             if (invincible)
             {
+                points += 300;
                 return;
             }
             else
             {
-                for (int i = 0; i < er.Length; i++)
-                {
-                    er[i].enabled = false;
-                }
                 Destroy(this.gameObject);
             }
         }
@@ -83,9 +83,9 @@ public class Player : MonoBehaviour
         //updating the position of the players
 
         if (_hitWall != true)
-          {
-              transform.position += (Vector3)(_moveSpeed * Time.fixedDeltaTime * _moveDir);
-          }
+        {
+            transform.position += (Vector3)(_moveSpeed * Time.fixedDeltaTime * _moveDir);
+        }
 
 
         pointText.text = characterName + ": " + points;
@@ -93,17 +93,32 @@ public class Player : MonoBehaviour
 
         if (timeCount > 0)
         {
+          
             invincible = true;
             timeCount -= Time.deltaTime;
         }
-        else
+
+        if (timeCount < 0)
         {
             invincible = false;
             for (int i = 0; i < er.Length; i++)
             {
                 er[i].enabled = false;
             }
+            
+        }
 
+    }
+
+    private void OnDestroy()
+    {
+      if (gameObject.name == ("spiderman_peter"))
+        {
+            wl.pointsP = 0 + points;
+        }
+      if (gameObject.name == ("spiderman_miles"))
+        {
+            wl.pointsM = 0 + points;
         }
 
     }
@@ -113,6 +128,8 @@ public class Player : MonoBehaviour
         _moveDir = newDir;
     }
 
-
-
+    public int returnPoints()
+    {
+        return points;
+    }
 }

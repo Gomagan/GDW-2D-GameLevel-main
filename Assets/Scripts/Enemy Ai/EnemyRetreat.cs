@@ -52,6 +52,7 @@ public class EnemyRetreat : EnemyBehavior
             if (this.enabled)
             {
                 Wounded();
+
             }
             
         }
