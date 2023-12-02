@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
             timeCount -= Time.deltaTime;
         }
 
-        if (timeCount <= 0)
+        if (timeCount < 0)
         {
             timeCount = 0;
             invincible = false;

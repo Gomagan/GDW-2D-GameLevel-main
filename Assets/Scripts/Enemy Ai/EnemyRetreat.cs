@@ -9,6 +9,8 @@ public class EnemyRetreat : EnemyBehavior
     [SerializeField] private AudioClip R_DeathSound;
     [SerializeField] private AudioClip S_DeathSound;
     [SerializeField] private AudioClip G_DeathSound;
+    [SerializeField] private AudioClip M_DeathSound;
+
     public bool wounded {  get;  set; }
 
     private void OnEnable()
@@ -38,6 +40,10 @@ public class EnemyRetreat : EnemyBehavior
         if (this.enemy.name == "Scorpion")
         {
             Source.PlayOneShot(S_DeathSound);
+        }
+        if (this.enemy.name == "Mysterio")
+        {
+            Source.PlayOneShot(M_DeathSound);
         }
         Vector3 postion = this.enemy.atBase.inside.position;
         postion.z = this.enemy.transform.position.z;
