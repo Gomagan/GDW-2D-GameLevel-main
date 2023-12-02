@@ -27,8 +27,10 @@ public class Player : MonoBehaviour
 
     [Header("Venom Power")]
     [SerializeField] private float invincibilityTime;
+    [SerializeField] private TextMeshProUGUI venomTime;
     private float timeCount;
     private bool invincible;
+    private int timeInt;
 
     void Start()
     {
@@ -98,8 +100,9 @@ public class Player : MonoBehaviour
             timeCount -= Time.deltaTime;
         }
 
-        if (timeCount < 0)
+        if (timeCount <= 0)
         {
+            timeCount = 0;
             invincible = false;
             for (int i = 0; i < er.Length; i++)
             {
@@ -107,6 +110,8 @@ public class Player : MonoBehaviour
             }
             
         }
+        timeInt = (int)timeCount;
+        venomTime.text = timeInt.ToString();
 
     }
 
