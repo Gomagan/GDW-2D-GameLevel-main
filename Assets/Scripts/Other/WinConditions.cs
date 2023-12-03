@@ -19,7 +19,7 @@ public class WinConditions : MonoBehaviour
     public int pointsM;
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         Webs = GameObject.FindGameObjectsWithTag("Web");
         Allenemies = FindObjectsOfType<Enemy>();
@@ -55,10 +55,12 @@ public class WinConditions : MonoBehaviour
                 }
                 if (pointsP > pointsM)
                 {
+                    GameOverText.color = Color.blue;
                     GameOverText.text = "Peter Wins!";
                 }
                 else
                 {
+                    GameOverText.color = Color.red;
                     GameOverText.text = "Miles Wins!";
                 }
             }
@@ -78,10 +80,13 @@ public class WinConditions : MonoBehaviour
                     }
                     if (pointsP > pointsM)
                     {
+                        GameOverText.color = Color.blue;
+
                         GameOverText.text = "Game over, Peter Wins!";
                     }
                     else
                     {
+                        GameOverText.color = Color.red;
                         GameOverText.text = "Game over, Miles Wins!";
                     }
                 }
