@@ -3732,7 +3732,7 @@ MonoBehaviour:
   wl: {fileID: 460455357}
   characterName: Peter
   pointText: {fileID: 1919087278}
-  invincibilityTime: 8
+  invincibilityTime: 9
   venomTime: {fileID: 1416251732}
 --- !u!50 &334989139
 Rigidbody2D:
@@ -3884,7 +3884,7 @@ MonoBehaviour:
   wl: {fileID: 460455357}
   characterName: Miles
   pointText: {fileID: 133161886}
-  invincibilityTime: 8
+  invincibilityTime: 9
   venomTime: {fileID: 554994460}
 --- !u!58 &344263564
 CircleCollider2D:
