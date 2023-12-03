@@ -29,7 +29,7 @@ public class TitleScript : MonoBehaviour
             small = !small;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("Main");
         }

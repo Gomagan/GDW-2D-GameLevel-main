@@ -21,7 +21,6 @@ public class WinConditions : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
         Webs = GameObject.FindGameObjectsWithTag("Web");
         Allenemies = FindObjectsOfType<Enemy>();
         AllPlayers = FindObjectsOfType<Player>();
@@ -72,7 +71,7 @@ public class WinConditions : MonoBehaviour
 
                     print(pointsP);
                     print(pointsM);
-                    RestartText.text = "Do you want to restart?";
+                    RestartText.text = "Press space to restart!";
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

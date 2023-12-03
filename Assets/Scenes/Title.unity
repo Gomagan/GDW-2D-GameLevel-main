@@ -226,7 +226,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.99, y: -175.08}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 435.8, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391529687
 MonoBehaviour:
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 696485033}
   - component: {fileID: 696485032}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

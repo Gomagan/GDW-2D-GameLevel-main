@@ -1088,7 +1088,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2395,7 +2395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -493.8, y: -288.5}
+  m_AnchoredPosition: {x: -325, y: -288.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133161886
@@ -3712,7 +3712,7 @@ MonoBehaviour:
   wl: {fileID: 460455357}
   characterName: Peter
   pointText: {fileID: 1919087278}
-  invincibilityTime: 9
+  invincibilityTime: 10
   venomTime: {fileID: 1416251732}
 --- !u!50 &334989139
 Rigidbody2D:
@@ -3864,7 +3864,7 @@ MonoBehaviour:
   wl: {fileID: 460455357}
   characterName: Miles
   pointText: {fileID: 133161886}
-  invincibilityTime: 9
+  invincibilityTime: 10
   venomTime: {fileID: 554994460}
 --- !u!58 &344263564
 CircleCollider2D:
@@ -5264,7 +5264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5357,7 +5357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -403, y: -232}
+  m_AnchoredPosition: {x: -226, y: -232}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &592142514
@@ -5923,7 +5923,7 @@ Transform:
   m_GameObject: {fileID: 808195435}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.1, y: 20, z: 0}
+  m_LocalPosition: {x: -33.6, y: 20, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6541,7 +6541,7 @@ Transform:
   m_GameObject: {fileID: 925430193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.86, y: 20, z: 0}
+  m_LocalPosition: {x: 35.82, y: 20, z: 0}
   m_LocalScale: {x: -1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9111,7 +9111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1306.7, y: -232}
+  m_AnchoredPosition: {x: -1496.8, y: -232}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416251732
@@ -9134,7 +9134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11218,7 +11218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1391, y: -288.5}
+  m_AnchoredPosition: {x: -1566.4, y: -288.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1919087278
@@ -11592,8 +11592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 107.4, y: 967.1}
-  m_SizeDelta: {x: 200, y: 60.4123}
+  m_AnchoredPosition: {x: 106, y: 930.8}
+  m_SizeDelta: {x: 207.4, y: 60.4123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949304205
 MonoBehaviour:
