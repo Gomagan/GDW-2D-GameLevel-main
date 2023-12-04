@@ -49,8 +49,26 @@ public class WinConditions : MonoBehaviour
 
             if (AllPlayers.Length == 1)
             {
-                pointsP = GameObject.Find("GameManager").GetComponent<WinConditions>().pointsP;
-                pointsM = GameObject.Find("GameManager").GetComponent<WinConditions>().pointsM;
+                if(GameObject.Find("spiderman_peter") != null)
+                {
+                    pointsP = GameObject.Find("spiderman_peter").GetComponent<Player>().returnPoints();
+
+                }
+                else
+                {
+                    pointsP = GameObject.Find("GameManager").GetComponent<WinConditions>().pointsP;
+
+                }
+                if (GameObject.Find("spiderman_miles") != null)
+                {
+                    pointsM = GameObject.Find("spiderman_miles").GetComponent<Player>().returnPoints();
+
+                }
+                else
+                {
+                    pointsM = GameObject.Find("GameManager").GetComponent<WinConditions>().pointsM;
+
+                }
             }
             if (AllPlayers.Length != 0)
             {
