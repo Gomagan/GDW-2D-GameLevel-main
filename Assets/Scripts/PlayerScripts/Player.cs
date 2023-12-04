@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
             
         }
         timeInt = (int)timeCount;
-        venomTime.text = timeInt.ToString();
+        venomTime.text = "Venom Timer: " + timeInt.ToString();
 
     }
 
