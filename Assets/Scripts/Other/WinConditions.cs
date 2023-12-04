@@ -46,13 +46,14 @@ public class WinConditions : MonoBehaviour
                 pointsP = GameObject.Find("spiderman_peter").GetComponent<Player>().returnPoints();
                 pointsM = GameObject.Find("spiderman_miles").GetComponent<Player>().returnPoints();
             }
+
+            if (AllPlayers.Length == 1)
+            {
+                pointsP = GameObject.Find("GameManager").GetComponent<WinConditions>().pointsP;
+                pointsM = GameObject.Find("GameManager").GetComponent<WinConditions>().pointsM;
+            }
             if (AllPlayers.Length != 0)
             {
-                RestartText.text = "Do you want to restart?";
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                }
                 if (pointsP > pointsM)
                 {
                     GameOverText.color = Color.blue;
@@ -74,10 +75,7 @@ public class WinConditions : MonoBehaviour
                     print(pointsP);
                     print(pointsM);
                     RestartText.text = "Press space to restart!";
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                    }
+                 
                     if (pointsP > pointsM)
                     {
                         GameOverText.color = Color.blue;
@@ -90,7 +88,11 @@ public class WinConditions : MonoBehaviour
                         GameOverText.text = "Game over, Miles Wins!";
                     }
                 }
-              
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+
             }
 
           
